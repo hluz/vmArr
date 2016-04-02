@@ -1,0 +1,25 @@
+<body>
+   {{> selectGroup}}
+</body>
+
+<template name="selectGroup">
+    <label>Select Group</label>
+    <select  {{b "options: selections, value: selected"}} ></select>
+    {{#with group}}
+        {{> showGroup}}
+    {{/with}}
+</template>
+
+<template name="showGroup">
+    <div>Group Code: <span {{b 'text:cd'}}></span></div>
+    <div>Group Name: <span {{b 'text:name'}}></span></div>
+    <div>--- Items ---</div>
+    {{#each items}}
+        {{> showItems}}
+    {{/each}}
+</template>
+
+<template name="showItems">
+    <div {{b 'text:name'}}></div>
+</template>
+
